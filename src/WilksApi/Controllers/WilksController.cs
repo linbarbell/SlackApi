@@ -34,24 +34,6 @@ namespace WilksApi.Controllers
             return GetWilks(gender, bw, total);
         }
 
-        public double GetWilks(string text)
-        {
-            text = text.Trim();
-            int atIndex = text.IndexOf('@');
-            int weightIndex = text.IndexOf('l');
-            if (weightIndex == -1) weightIndex = text.IndexOf('k');
-            var total = text.Substring(0, atIndex).Trim().Split('/').Select(double.Parse).Sum();
-            var bw = double.Parse(text.Substring(atIndex + 1, weightIndex - atIndex - 1).Trim());
-            var weightType = text.Substring(weightIndex, 2);
-            var gender = (Gender)Enum.Parse(typeof(Gender), text.Substring(text.Length - 1), true);
-            if (weightType.Contains("lb"))
-            {
-                bw = GetWeightInKg(bw);
-                total = GetWeightInKg(total);
-            }
-            return GetWilks(gender, bw, total);
-        }
-
         private double GetWeightInKg(double weightInLbs)
         {
             return weightInLbs * .45359237;
