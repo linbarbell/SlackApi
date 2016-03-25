@@ -47,3 +47,4 @@ Temporary Items
 .apdisk
 *.suo
 *.user
+applicationhost.config
