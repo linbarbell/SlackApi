@@ -1,4 +1,4 @@
-﻿namespace WilksApi
+﻿namespace WilksApi.Models
 {
     public class Coefficients
     {

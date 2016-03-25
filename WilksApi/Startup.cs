@@ -3,6 +3,8 @@ using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using WilksApi.Managers;
+using WilksApi.Slack;
 
 namespace WilksApi
 {
@@ -21,6 +23,8 @@ namespace WilksApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddScoped<WilksManager>();
+            services.AddScoped<SlackHttpClient>();
         }
         
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
