@@ -8,7 +8,7 @@ namespace WilksApi.Slack
 {
     public class SlackHttpClient
     {
-        private string SlackUrl { get; set; } = "https://hooks.slack.com/services/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";
+        private string SlackUrl { get; set; } = "FUCKING SECRET";
 
         public async Task<HttpStatusCode> Post(string text)
         {
