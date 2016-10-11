@@ -1,16 +1,21 @@
 ﻿using System.Threading.Tasks;
-using Microsoft.AspNet.Mvc;
-using WilksApi.Managers;
-using WilksApi.Slack;
+using Microsoft.AspNetCore.Mvc;
+using SlackApi.Managers;
+using SlackApi.Slack;
 
-namespace WilksApi.Controllers
+namespace SlackApi.Controllers
 {
     public class WilksController : Controller
     {
-        [FromServices]
-        public WilksManager WilksManager { get; set; }
-        [FromServices]
-        public SlackHttpClient SlackHttpClient { get; set; }
+        private WilksManager WilksManager;
+        private SlackHttpClient SlackHttpClient;
+
+        public WilksController(WilksManager wilksManager, SlackHttpClient slackHttpClient)
+        {
+            WilksManager = wilksManager;
+            SlackHttpClient = slackHttpClient;
+            SlackHttpClient.SlackUrl = "FUCKING SECRET";
+        }
 
         /// <summary>
         /// Gets the wilks based on what the weakpot types in slack and posts to slack

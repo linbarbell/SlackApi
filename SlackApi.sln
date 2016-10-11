@@ -1,23 +1,26 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FFF4B059-A8F5-4B91-A65A-B82AE113F043}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WilksApi", "WilksApi\WilksApi.xproj", "{13BECAAA-E06E-4D99-8161-98B111C0160C}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SlackApi", "SlackApi\SlackApi.xproj", "{13BECAAA-E06E-4D99-8161-98B111C0160C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Dev|Any CPU = Dev|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{13BECAAA-E06E-4D99-8161-98B111C0160C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{13BECAAA-E06E-4D99-8161-98B111C0160C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13BECAAA-E06E-4D99-8161-98B111C0160C}.Dev|Any CPU.ActiveCfg = Dev|Any CPU
+		{13BECAAA-E06E-4D99-8161-98B111C0160C}.Dev|Any CPU.Build.0 = Dev|Any CPU
 		{13BECAAA-E06E-4D99-8161-98B111C0160C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13BECAAA-E06E-4D99-8161-98B111C0160C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection

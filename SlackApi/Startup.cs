@@ -1,12 +1,12 @@
-﻿using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Hosting;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using WilksApi.Managers;
-using WilksApi.Slack;
+using SlackApi.Managers;
+using SlackApi.Slack;
 
-namespace WilksApi
+namespace SlackApi
 {
     public class Startup
     {
@@ -24,6 +24,7 @@ namespace WilksApi
         {
             services.AddMvc();
             services.AddScoped<WilksManager>();
+            services.AddScoped<RotationManager>();
             services.AddScoped<SlackHttpClient>();
         }
         
@@ -31,11 +32,8 @@ namespace WilksApi
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-            app.UseIISPlatformHandler();
             app.UseStaticFiles();
             app.UseMvc(routes => routes.MapRoute("main", "{controller}/{action}/{id?}"));
         }
-        
-        public static void Main(string[] args) => WebApplication.Run<Startup>(args);
     }
 }

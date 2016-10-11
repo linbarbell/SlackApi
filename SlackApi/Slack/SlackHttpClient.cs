@@ -4,11 +4,11 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace WilksApi.Slack
+namespace SlackApi.Slack
 {
     public class SlackHttpClient
     {
-        private string SlackUrl { get; set; } = "FUCKING SECRET";
+        public string SlackUrl { get; set; }
 
         public async Task<HttpStatusCode> Post(string text)
         {

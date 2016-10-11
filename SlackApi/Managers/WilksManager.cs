@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
-using WilksApi.Models;
+using SlackApi.Models;
 
-namespace WilksApi.Managers
+namespace SlackApi.Managers
 {
     public class WilksManager
     {

@@ -1,0 +1,56 @@
+﻿{
+    "version": "1.0.0-*",
+    "buildOptions": {
+        "emitEntryPoint": true,
+        "copyToOutput": {
+            "include": [
+                "appsettings.json",
+                "wwwroot"
+            ]
+        }
+    },
+    "runtimeOptions": {
+        "configProperties": {
+            "System.GC.Server": true
+        }
+    },
+    "dependencies": {
+        "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
+        "Microsoft.AspNetCore.Mvc": "1.0.0",
+        "Microsoft.AspNetCore.Mvc.Core": "1.0.0",
+        "Microsoft.AspNet.WebApi.Client": "5.2.3",
+        "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
+        "Microsoft.AspNetCore.StaticFiles": "1.0.0",
+        "Microsoft.Extensions.Configuration.Json": "1.0.0",
+        "Microsoft.Extensions.Logging": "1.0.0",
+        "Microsoft.Extensions.Logging.Console": "1.0.0",
+        "Microsoft.Extensions.Logging.Debug": "1.0.0",
+        "Newtonsoft.Json": "9.0.1"
+    },
+    "tools": {
+        "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview2-final"
+    },
+    "scripts": {
+        "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
+    },
+    "runtimes": {
+        "win10-x64": {}
+    },
+    "frameworks": {
+        "net461": {}
+    },
+    "configurations": {
+        "Dev": {}
+    },
+    "publishOptions": {
+        "include": [
+            "wwwroot",
+            "web.config",
+            "appsettings.json"
+        ],
+        "exclude": [
+            "**.user",
+            "**.vspscc"
+        ]
+    }
+}

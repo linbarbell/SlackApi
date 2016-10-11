@@ -1,4 +1,4 @@
-﻿namespace WilksApi.Slack
+﻿namespace SlackApi.Slack
 {
     public class SlackPostModel
     {
