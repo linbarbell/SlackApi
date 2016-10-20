@@ -33,8 +33,8 @@ namespace SlackApi.Controllers
         [HttpGet]
         public async Task GetRotation(string token, string team_id, string team_domain, string channel_id, string channel_name, string user_id, string user_name, string command, string text)
         {
-            var wilksMessage = RotationManager.GetRotation(text);
-            await SlackHttpClient.Post(wilksMessage);
+            var rotationMessage = RotationManager.GetRotation(text);
+            await SlackHttpClient.Post($"{text}: {rotationMessage}");
         }
     }
 }
